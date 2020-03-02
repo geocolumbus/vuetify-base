@@ -1,3 +1,5 @@
+// Base Card
+
 <template>
   <v-card
     :outlined="outlined"
@@ -7,16 +9,15 @@
       click: onClick
     }"
   >
-    <slot />
     <!-- <base-card-title></base-card-title> -->
 
-    <!-- <v-card-text>
+    <v-card-text>
       <slot />
-    </v-card-text> -->
+    </v-card-text>
 
     <base-card-actions
-      :cancelText="cancelText"
-      :submitText="submitText"
+      :cancel-text="cancelText"
+      :submit-text="submitText"
     />
   </v-card>
 </template>

@@ -1,3 +1,4 @@
+// Card
 <template>
   <v-card-actions>
     <base-btn color="grey">
@@ -6,7 +7,9 @@
 
     <!-- <v-spacer />  -->
 
-    <base-btn>Submit</base-btn>
+    <base-btn>
+      <span v-text="submitText" />
+    </base-btn>
   </v-card-actions>
 </template>
 
@@ -18,6 +21,10 @@
       cancelText: {
         type: String,
         default: 'Cancel',
+      },
+      submitText: {
+        type: String,
+        default: 'Submit',
       },
     },
   }
