@@ -11,7 +11,10 @@ const router = new Router({
     if (to.hash) return { selector: to.hash }
     if (savedPosition) return savedPosition
 
-    return { x: 0, y: 0 }
+    return {
+      x: 0,
+      y: 0,
+    }
   },
   routes: [
     {
@@ -22,6 +25,17 @@ const router = new Router({
           path: '',
           name: 'Home',
           component: () => import('@/views/home/Index.vue'),
+        },
+      ],
+    },
+    {
+      path: '/workshop',
+      component: () => import('@/layouts/workshop/Index.vue'),
+      children: [
+        {
+          path: '',
+          name: 'Dashboard',
+          component: () => import('@/views/dashboard/Index.vue'),
         },
       ],
     },

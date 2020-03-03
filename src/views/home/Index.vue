@@ -1,5 +1,7 @@
 <template>
   <v-container>
+    <h1>{{ title }}</h1>
+    <v-text>{{ text }}</v-text>
     <h1>Base Component</h1>
     <base-card
       submit-text="Send"
@@ -23,6 +25,29 @@
       <base-card-actions />
     </v-card>
 
+    <v-container>
+      <v-row justify="center">
+        <base-btn>
+          Toggle
+          <v-icon>mdi-account</v-icon>
+        </base-btn>
+      </v-row>
+
+    </v-container>
     <!-- v-sheet -->
   </v-container>
 </template>
+<script>
+  export default {
+    props: {
+      title: {
+        type: String,
+        default: 'Home Page',
+      },
+      text: {
+        type: String,
+        default: 'Home page text. ',
+      },
+    },
+  }
+</script>
